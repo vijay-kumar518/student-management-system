@@ -15,6 +15,7 @@ def save_data(data):
     with open(FILE_NAME, "w") as f:
         json.dump(data, f, indent=4)
 
+# student inform 
 def add_student():
     data = load_data()
     roll = input("Enter Roll Number: ")
@@ -36,6 +37,7 @@ def view_students():
             print(f"Roll: {s['Roll']}, Name: {s['Name']}, Age: {s['Age']}, Course: {s['Course']}")
         print()
 
+# student search
 def search_student():
     roll = input("Enter Roll Number to Search: ")
     data = load_data()
@@ -45,6 +47,7 @@ def search_student():
             return
     print("❌ Student not found.\n")
 
+#student delete
 def delete_student():
     roll = input("Enter Roll Number to Delete: ")
     data = load_data()
@@ -55,6 +58,7 @@ def delete_student():
         save_data(new_data)
         print("✅ Student Deleted Successfully!\n")
 
+# student menu
 def student_menu():
     while True:
         print("====== Student Management System ======")
